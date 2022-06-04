@@ -1,0 +1,69 @@
+$handleWidth: 5px;
+$color: black;
+
+.timelinR{
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+
+    
+    >.background{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        border-right: 1px solid $color;
+        pointer-events: none;
+        overflow-x: hidden;
+        
+        p{
+            position: absolute;
+            bottom: 0;
+            color: $color;
+            user-select: none;
+        }
+    }
+    >.item{
+        position: absolute;
+        overflow: hidden;
+        width: auto;
+        
+        &.range{
+            background-color: #85a2ff;
+    
+            .resize{
+                background-color: black;
+                cursor: e-resize;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: $handleWidth;
+    
+                &.l{
+                    left: 0;
+                }
+    
+                &.r{
+                    right: 0;
+                }
+            }
+
+            p{
+                margin: 0px 0px 0px $handleWidth;
+                height: 100%;
+                padding: 1rem;
+                outline: none;
+            }
+        }
+        &.point{
+            background-color: #85a2ff;
+            border-radius: 0 .5rem .5rem .5rem;
+
+            p{
+                margin: 0px 0px 0px $handleWidth;
+                height: 100%;
+                padding: 1rem;
+                outline: none;
+            }
+        }
+    }
+}

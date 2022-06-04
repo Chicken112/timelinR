@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timelinR example</title>
+
+    <script src="timelinr.js"></script>
+    <link rel="stylesheet" href="timelinr.css">
+</head>
+<body>
+    <div id="timeline"></div>
+    <h1>TimelinR</h1>
+    <p>Use the scroll wheel or drag to pan the view</p>
+    <p>Use Ctrl + Scroll to zoom in and out</p>
+    <p>Drag the edges of ranges to resize them</p>
+    <p>You can click to edit the text, or drag to move</p>
+
+    <script>
+        const container = document.querySelector('#timeline');
+        const time = new TimelineR(timeline, [
+            {from: 1, to: 5, text: "Hello"},
+            {from: 10, text: "I'm a point"},
+            {from: 12, to: 32, text: "I'm a range"}
+        ], {
+            start: 1,
+            zoom: 10,
+            maxZoom: 1,
+            minZoom: 60,
+            minOffset: 0, //Sould not be changed
+            maxOffset: 60,
+            labelText: i => {return i}
+        });
+    </script>
+</body>
+</html>
