@@ -1,25 +1,35 @@
-$handleWidth: 5px;
-$color: black;
+$lines: black;
+$text: white;
+$item-background: #85a2ff;
+$resize-background: #537bff;
+$currenttime: red;
 
 .timelinR{
+    margin: 0;
+    padding: 0;
     position: relative;
     overflow: hidden;
-    height: 100px;
+    min-height: 100px;
+    user-select: none !important;
 
+    &.static{
+        >.item{
+            margin-left: 2.5px;
+        }
+    }
     
     >.background{
         position: absolute;
         left: 0;
         height: 100%;
-        border-right: 1px solid $color;
+        border-right: 1px solid $lines;
         pointer-events: none;
         overflow-x: hidden;
         
         p{
             position: absolute;
             bottom: 0;
-            color: $color;
-            user-select: none;
+            color: $lines;
         }
     }
     >.item{
@@ -27,11 +37,16 @@ $color: black;
         overflow: hidden;
         width: auto;
         
+        &:hover{
+            z-index: 2;
+        }
+
+        $handleWidth: 5px;
         &.range{
-            background-color: #85a2ff;
+            background-color: $item-background;
     
             .resize{
-                background-color: black;
+                background-color: $resize-background;
                 cursor: e-resize;
                 position: absolute;
                 top: 0;
@@ -48,22 +63,28 @@ $color: black;
             }
 
             p{
-                margin: 0px 0px 0px $handleWidth;
-                height: 100%;
-                padding: 1rem;
+                margin-left: $handleWidth;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: .5rem;
                 outline: none;
             }
         }
         &.point{
-            background-color: #85a2ff;
+            background-color: $item-background;
             border-radius: 0 .5rem .5rem .5rem;
-
             p{
-                margin: 0px 0px 0px $handleWidth;
-                height: 100%;
-                padding: 1rem;
-                outline: none;
+                padding: .5rem;
+                margin-top: 0;
+                margin-bottom: 0;
             }
         }
+    }
+    >.currenttime{
+        position: absolute;
+        height: 100%;
+        background-color: $currenttime;
+        width: 2px;
+        z-index: 10;
     }
 }

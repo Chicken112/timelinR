@@ -1,9 +1,17 @@
 .timelinR {
+  margin: 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
-  height: 100px;
+  min-height: 100px;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
 }
-
+.timelinR.static > .item {
+  margin-left: 2.5px;
+}
 .timelinR > .background {
   position: absolute;
   left: 0;
@@ -12,60 +20,56 @@
   pointer-events: none;
   overflow-x: hidden;
 }
-
 .timelinR > .background p {
   position: absolute;
   bottom: 0;
   color: black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
-
 .timelinR > .item {
   position: absolute;
   overflow: hidden;
   width: auto;
 }
-
+.timelinR > .item:hover {
+  z-index: 2;
+}
 .timelinR > .item.range {
   background-color: #85a2ff;
 }
-
 .timelinR > .item.range .resize {
-  background-color: black;
+  background-color: #537bff;
   cursor: e-resize;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 5px;
 }
-
 .timelinR > .item.range .resize.l {
   left: 0;
 }
-
 .timelinR > .item.range .resize.r {
   right: 0;
 }
-
 .timelinR > .item.range p {
-  margin: 0px 0px 0px 5px;
-  height: 100%;
-  padding: 1rem;
+  margin-left: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.5rem;
   outline: none;
 }
-
 .timelinR > .item.point {
   background-color: #85a2ff;
-  border-radius: 0 .5rem .5rem .5rem;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
 }
-
 .timelinR > .item.point p {
-  margin: 0px 0px 0px 5px;
-  height: 100%;
-  padding: 1rem;
-  outline: none;
+  padding: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-/*# sourceMappingURL=timelinr.css.map */
+.timelinR > .currenttime {
+  position: absolute;
+  height: 100%;
+  background-color: red;
+  width: 2px;
+  z-index: 10;
+}
