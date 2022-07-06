@@ -68,6 +68,7 @@ $currenttime: red;
                 margin-bottom: 0;
                 padding: .5rem;
                 outline: none;
+                white-space: nowrap;
             }
         }
         &.point{
@@ -77,6 +78,7 @@ $currenttime: red;
                 padding: .5rem;
                 margin-top: 0;
                 margin-bottom: 0;
+                white-space: nowrap;
             }
         }
     }
