@@ -1,14 +1,11 @@
 # TimelinR
 My simple timeline implementation <br/>
-You can vew a working demo here: [https://chicken112.github.io/timelinR/index.html](https://chicken112.github.io/timelinR/index.html)
 
 # Features
 ```diff
 ! This timeline is single-lined. If two points get too close, they will  just simply overlap. !
 ```
-- Editable text
 - Supports ranges and points
-- Movable / resizable elements
 
 # Usage
 ```js
@@ -19,12 +16,12 @@ const timeline = new TimelinR(element, data, options);
 {
     from: number,
     to: optional number,
-    text: string
+    text: optional string
 }
 ```
 
 ### Options
-an object with the following optional properties
+a JSON object with the following optional properties
 | name | type | default | description |
 |---|---|---|---|
 | start | number | 0 | Where should the timeline start |
@@ -41,10 +38,3 @@ an object with the following optional properties
 | onZoomChanged | callback(number):void | (zoom)=>{} | A callback for when the zoom changes |
 | onOffsetChanged | callback(number):void | (offfset)=>{} | A callback for when the offset chages |
 | onDataChanged | callback(array[data]):void | (data)=>{} | A callback for when data was moved, resized or renamed |
-
-
-### Methods
-getData()
-setData(array[data])
-setCurrentTime(number)
-setOffset(number)
